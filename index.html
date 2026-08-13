@@ -38,8 +38,6 @@
   .tbright{display:flex;align-items:center;gap:10px;}
   .badge{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
     color:#9a6a00;background:#fdf3df;border:1px solid #f0d493;border-radius:6px;padding:4px 9px;}
-  .counter{font-size:12px;font-weight:800;color:var(--navy);background:var(--navy-tint);
-    border:1px solid #d3daf0;border-radius:8px;padding:6px 12px;font-variant-numeric:tabular-nums;}
 
   .tabbar{display:flex;flex-wrap:wrap;gap:6px;padding:12px 26px 0;
     border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:52px;z-index:59;}
@@ -60,14 +58,14 @@
     color:#fff;padding:88px 0 76px;position:relative;overflow:hidden;}
   .cover::after{content:'';position:absolute;right:-90px;top:-90px;width:520px;height:520px;
     border-radius:50%;background:radial-gradient(circle,rgba(239,118,34,.22),transparent 62%);}
-  .cover .wrap{position:relative;z-index:2;}
+  .cover .wrap{position:relative;z-index:2;max-width:1240px;}
   .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
     color:var(--orange);margin-bottom:16px;}
   .cover h1{font-size:clamp(38px,6vw,68px);font-weight:900;letter-spacing:-0.03em;}
   .cover .sub{margin-top:16px;font-size:clamp(15px,1.6vw,19px);font-weight:500;
     color:rgba(255,255,255,.82);max-width:560px;line-height:1.5;}
-  .covergrid{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start;}
-  .coverpic{margin:0;padding-top:38px;}
+  .covergrid{display:grid;grid-template-columns:1fr 440px;gap:52px;align-items:center;}
+  .coverpic{margin:0;}
   .coverpic img{width:100%;display:block;border-radius:16px;
     border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 44px rgba(0,0,0,.4);}
   .coverpic figcaption{margin-top:12px;font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.5);}
@@ -115,7 +113,6 @@
     transition:border-color .2s,box-shadow .2s;}
   .ex[data-open="1"]{border-color:#c8d0e8;box-shadow:0 10px 34px rgba(20,30,70,.09);}
   .ex-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;}
-  .ex-n{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);}
   .ex-tag{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
     color:var(--grey);background:var(--navy-tint);border-radius:20px;padding:5px 12px;}
   .setup{font-size:clamp(21px,2.5vw,30px);font-weight:800;color:var(--navy);max-width:800px;}
@@ -264,7 +261,6 @@
   </div>
   <div class="tbright">
     <span class="badge">Self-reported</span>
-    <span class="counter" id="counter">Exhibit 1 of 5</span>
   </div>
 </header>
 
@@ -285,15 +281,17 @@
         <p class="sub">An economist by training, which is the last part of this that went
           according to plan</p>
         <table class="cvtable">
-          <thead><tr><th>Chapter</th><th>How it ended</th></tr></thead>
+          <thead><tr><th>Line item</th><th>Notes to the accounts</th></tr></thead>
           <tbody>
-            <tr><td>Master's in economics</td><td>Completed, on schedule, without incident</td></tr>
-            <tr><td>Chief of staff to the Education Minister, India</td>
+            <tr><td>Master's in economics, specialising in trade and finance</td>
+                <td>Followed by a brief stint in investment banking, after which an insatiable
+                  desire to be overworked and underpaid led me to government</td></tr>
+            <tr><td>Chief of Staff to the Education Minister, Government of Delhi</td>
                 <td>Concluded once the Minister worked out that I was mostly winging it</td></tr>
-            <tr><td>World Bank, three years</td>
+            <tr><td>World Bank</td>
                 <td>Concluded on tiring of selling governments loans they did not need, for projects
                   that never worked</td></tr>
-            <tr><td>A second master's, Columbia</td><td>Undertaken principally to delay unemployment</td></tr>
+            <tr><td>MPA, Columbia</td><td>Undertaken principally to delay unemployment</td></tr>
             <tr><td>Vital Strategies, this summer</td><td>Concludes this afternoon</td></tr>
           </tbody>
         </table>
@@ -310,49 +308,59 @@
       <p class="tb-k">The summer, reviewed</p>
       <h2>My Internship in Numbers</h2>
       <p class="tb-d">All figures self-reported, unaudited, and subject to significant measurement error</p>
-      <p class="tb-h">Five exhibits, one at a time, and then the two things that were actually
-        in the job description</p>
+      <p class="tb-h">One at a time, and then the two things that were actually in the job description</p>
     </div>
   </div>
 
   <div class="wrap exwrap">
-    <div class="secttl"><h3>Findings</h3><i></i><em>Five exhibits</em></div>
+    <div class="secttl"><h3>Findings</h3><i></i></div>
 
     <!-- Exhibit 1 -->
     <article class="ex" data-ex>
-      <div class="ex-head"><span class="ex-n">Exhibit 01</span><span class="ex-tag">Peer benchmarking</span></div>
+      <div class="ex-head"><span class="ex-tag">Peer benchmarking</span></div>
       <h2 class="setup">Over the course of the summer, I consistently ranked among the top performers in…</h2>
       <button class="revealbtn"><span class="dot"></span>Reveal</button>
       <div class="punch"><div class="punch-in">
         <p class="bigline">number of coffees consumed: <em>~200</em></p>
         <div class="chartbox">
           <div class="ct">Coffee consumption, 2026 summer intern cohort</div>
-          <div class="cs">Cups per intern, June to August. Cohort comparison shown as reported.</div>
-          <svg viewBox="0 0 720 210" role="img" aria-label="Bar chart in which only one intern reported data">
-            <line x1="150" x2="700" y1="176" y2="176" stroke="#DDE1EE"/>
-            <rect x="150" y="24" width="470" height="26" fill="#24337A"/>
-            <text x="632" y="42" style="font-size:13px;font-weight:800;fill:#24337A">200</text>
-            <text x="138" y="42" text-anchor="end" style="font-size:12px;font-weight:700;fill:#1b2236">Anurag</text>
-            <rect x="150" y="62" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
-            <text x="160" y="80" style="font-size:11.5px;fill:#6E6F72">did not respond to the survey</text>
-            <text x="138" y="80" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern B</text>
-            <rect x="150" y="100" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
-            <text x="160" y="118" style="font-size:11.5px;fill:#6E6F72">did not respond to the survey</text>
-            <text x="138" y="118" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern C</text>
-            <rect x="150" y="138" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
-            <text x="160" y="156" style="font-size:11.5px;fill:#6E6F72">was not aware of the survey</text>
-            <text x="138" y="156" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern D</text>
-            <text x="150" y="198" style="font-size:11px;fill:#6E6F72">Response rate: 1 of 4 (25%). Ranking published anyway.</text>
+          <div class="cs">Cups per intern, June to August, across the full cohort of eight. Comparison shown as reported.</div>
+          <svg viewBox="0 0 720 316" role="img" aria-label="Bar chart of coffee consumption across eight interns, in which only one reported data">
+            <rect x="150" y="16" width="470" height="26" fill="#24337A"/>
+            <text x="632" y="34" style="font-size:13px;font-weight:800;fill:#24337A">200</text>
+            <text x="138" y="34" text-anchor="end" style="font-size:12px;font-weight:700;fill:#1b2236">Anurag</text>
+            <rect x="150" y="48" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="66" style="font-size:11.5px;fill:#6E6F72">did not respond to the survey</text>
+            <text x="138" y="66" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern B</text>
+            <rect x="150" y="80" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="98" style="font-size:11.5px;fill:#6E6F72">did not respond to the survey</text>
+            <text x="138" y="98" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern C</text>
+            <rect x="150" y="112" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="130" style="font-size:11.5px;fill:#6E6F72">was not aware of the survey</text>
+            <text x="138" y="130" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern D</text>
+            <rect x="150" y="144" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="162" style="font-size:11.5px;fill:#6E6F72">did not respond to the survey</text>
+            <text x="138" y="162" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern E</text>
+            <rect x="150" y="176" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="194" style="font-size:11.5px;fill:#6E6F72">declined to participate</text>
+            <text x="138" y="194" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern F</text>
+            <rect x="150" y="208" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="226" style="font-size:11.5px;fill:#6E6F72">did not respond to the survey</text>
+            <text x="138" y="226" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern G</text>
+            <rect x="150" y="240" width="470" height="26" fill="none" stroke="#DDE1EE" stroke-dasharray="5 4"/>
+            <text x="160" y="258" style="font-size:11.5px;fill:#6E6F72">was not aware there was a ranking</text>
+            <text x="138" y="258" text-anchor="end" style="font-size:12px;font-weight:700;fill:#6E6F72">Intern H</text>
+            <text x="150" y="290" style="font-size:11px;fill:#6E6F72">Response rate: 1 of 8 (12.5%). Ranking published anyway.</text>
           </svg>
         </div>
         <p class="fn">Ranking based exclusively on data reported by the candidate. Other interns were not consulted.</p>
-        <div class="exnav"><button class="nextbtn">Next exhibit</button></div>
+        <div class="exnav"><button class="nextbtn">Next</button></div>
       </div></div>
     </article>
 
     <!-- Exhibit 2 -->
     <article class="ex" data-ex>
-      <div class="ex-head"><span class="ex-n">Exhibit 02</span><span class="ex-tag">Population indicators</span></div>
+      <div class="ex-head"><span class="ex-tag">Population indicators</span></div>
       <h2 class="setup">During my internship, I successfully increased Vital Strategies…</h2>
       <button class="revealbtn"><span class="dot"></span>Reveal</button>
       <div class="punch"><div class="punch-in">
@@ -374,13 +382,13 @@
           </table>
         </div>
         <p class="fn">Values are indicative. The underlying figure in years is available on request and will not be provided.</p>
-        <div class="exnav"><button class="nextbtn">Next exhibit</button></div>
+        <div class="exnav"><button class="nextbtn">Next</button></div>
       </div></div>
     </article>
 
     <!-- Exhibit 3 -->
     <article class="ex" data-ex>
-      <div class="ex-head"><span class="ex-n">Exhibit 03</span><span class="ex-tag">Professional development</span></div>
+      <div class="ex-head"><span class="ex-tag">Professional development</span></div>
       <h2 class="setup">One achievement I am especially proud of…</h2>
       <button class="revealbtn"><span class="dot"></span>Reveal</button>
       <div class="punch"><div class="punch-in">
@@ -410,13 +418,13 @@
           </svg>
         </div>
         <p class="fn">Causality is not established. The MTA declined to comment.</p>
-        <div class="exnav"><button class="nextbtn">Next exhibit</button></div>
+        <div class="exnav"><button class="nextbtn">Next</button></div>
       </div></div>
     </article>
 
     <!-- Exhibit 4 -->
     <article class="ex" data-ex>
-      <div class="ex-head"><span class="ex-n">Exhibit 04</span><span class="ex-tag">Development area</span></div>
+      <div class="ex-head"><span class="ex-tag">Development area</span></div>
       <h2 class="setup">One key development area this summer was improving my responsiveness to…</h2>
       <button class="revealbtn"><span class="dot"></span>Reveal</button>
       <div class="punch"><div class="punch-in">
@@ -447,13 +455,13 @@
         </div>
         <p class="fn">Of the three occasions on which I reached the kitchen, all three had been fully cleared.
           Median time from announcement to depletion is estimated at under four minutes.</p>
-        <div class="exnav"><button class="nextbtn">Final exhibit</button></div>
+        <div class="exnav"><button class="nextbtn">Last one</button></div>
       </div></div>
     </article>
 
     <!-- Exhibit 5: the finale -->
     <article class="ex" data-ex id="ex-roi">
-      <div class="ex-head"><span class="ex-n">Exhibit 05</span><span class="ex-tag">Return on investment</span></div>
+      <div class="ex-head"><span class="ex-tag">Return on investment</span></div>
       <h2 class="setup">In a nutshell, for every $1 Vital Strategies invested in me, there was a significant multiplier effect…</h2>
       <button class="revealbtn"><span class="dot"></span>Reveal the model</button>
       <div class="punch"><div class="punch-in" style="border:none;padding-top:6px">
@@ -502,7 +510,7 @@
                 <li>Coffee unit cost restated from $0.35 to $0.85 once the correct comparator, the office
                   machine rather than the one at home, was identified.</li>
                 <li>Baked-goods conversion rate held at 0% after re-verification. The figure is correct.</li>
-                <li>The ranking in Exhibit 01 was re-checked and remains based exclusively on data
+                <li>The coffee ranking was re-checked and remains based exclusively on data
                   reported by the candidate.</li>
               </ol>
               <p style="margin-top:10px">Method is identical in structure to the CRVS investment case
@@ -1726,15 +1734,9 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
      in view until they are asked for, so nothing is given away early. */
   var exhibits = Array.prototype.slice.call(document.querySelectorAll('.ex'));
   var handoff = document.querySelector('.handoff');
-  var counter = document.getElementById('counter');
 
   exhibits.forEach(function(ex, i){ if(i > 0) ex.setAttribute('data-pending', ''); });
   handoff.setAttribute('data-pending', '');
-
-  function setCounter(){
-    var shown = exhibits.filter(function(x){ return !x.hasAttribute('data-pending'); }).length;
-    counter.textContent = 'Exhibit ' + Math.min(shown, exhibits.length) + ' of ' + exhibits.length;
-  }
 
   function open(ex){
     if(!ex || ex.dataset.open === '1') return;
@@ -1751,7 +1753,6 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
     var target = next || handoff;
     target.removeAttribute('data-pending');
     from.querySelector('.nextbtn').setAttribute('data-done', '');
-    setCounter();
     setTimeout(function(){ target.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
   }
 
@@ -1770,7 +1771,6 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
     if(current.dataset.open !== '1'){ open(current); current.scrollIntoView({behavior:'smooth', block:'start'}); }
     else advance(current);
   });
-  setCounter();
 
   /* ---------- tabs, with the dashboards mounted on first view ---------- */
   var mounted = {};
